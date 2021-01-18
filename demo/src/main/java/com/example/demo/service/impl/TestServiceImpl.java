@@ -26,11 +26,11 @@ public class TestServiceImpl implements TestService {
 
     @Override
     public Student getStudentById(String id) {
-//        QueryWrapper<Student> queryWrapper = new QueryWrapper<>();
-//        queryWrapper.eq("id",id);
-//        return testMapper.selectOne(queryWrapper);
-        Student student = testMapper.selectById(id);
+        QueryWrapper<Student> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("id",id);
+        return testMapper.selectOne(queryWrapper);
+//        Student student = testMapper.selectById(id);
 //        redisTemplate.opsForValue().set(student.getId(),student);
-        return student;
+//        return student;
     }
 }
